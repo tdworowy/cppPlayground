@@ -13,13 +13,13 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Basicks">
+    <Filter Include="Source Files\Basics">
       <UniqueIdentifier>{ce135746-47f5-4b42-8614-c029b4a5f8f4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source1.cpp">
-      <Filter>Source Files\Basicks</Filter>
+      <Filter>Source Files\Basics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
