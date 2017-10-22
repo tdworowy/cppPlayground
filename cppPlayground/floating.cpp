@@ -10,7 +10,7 @@ int main()
 
 	cout << "tub = " << tub << endl;
 	cout << "milion * tub = " << milion * tub << endl;
-	cout << "10 milions * tub" << 10 * milion * tub << endl;
+	cout << "10 milions * tub = " << 10 * milion * tub << endl;
 	cout << "mint = " << mint << endl;
 	cout << "milion * mint = " << milion * mint << endl;
 
