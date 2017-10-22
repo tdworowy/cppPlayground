@@ -30,7 +30,7 @@ int main()
 	cout << "Min int: " << n_int << endl;
 	cout << "Min short: " << n_short << endl;
 	cout << "Min long: " << n_long << endl;
-	cout << "Min long long: " << n_llong << endl;
+	cout << "Max long long: " << n_llong << endl;
 
 
 }
