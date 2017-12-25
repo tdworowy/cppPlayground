@@ -14,7 +14,7 @@ bool check_if_max(char,char);
 bool check_if_positive(char number) {
 	bool res = true;
 	if (number < 0) {
-		cout << "Board Eadge! ";
+		cout << "Board Edge! ";
 		res = false;
 	}
 	return res;
@@ -23,7 +23,7 @@ bool check_if_positive(char number) {
 bool check_if_max(char number, char max) {
 		bool res = true;
 		if (number >= max) {
-			cout << "Board Eadge! ";
+			cout << "Board Edge! ";
 			res = false;
 		}
 		return res;
