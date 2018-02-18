@@ -4,7 +4,7 @@
 struct testStruct {
 	char name[20];
 	float number1;
-	int numver2;
+	int numver2:10; //10 bites max
 };
 
 struct testStruct2 {
