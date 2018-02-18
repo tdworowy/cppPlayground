@@ -33,7 +33,19 @@ int main()
 		t1,
 		t2
 	};
-	cout << t3.nestedStruct2.name;
+	testStruct struct_array[3]=
+	{
+		{"DUpa1",2,3},
+		{"DuPa2",4,5},
+		{"DupA3",6,7}
+
+	};
+	cout << t3.nestedStruct2.name << endl;
+	for (int i = 0; i < 3; i++) {
+		cout << struct_array[i].name << endl;
+		cout << struct_array[i].number1 << endl;
+		cout << struct_array[i].numver2 << endl;
+	}
 
 }
 
