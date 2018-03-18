@@ -7,7 +7,6 @@ int main()
 	while (1) {
 		char arry[50];
 		cout << arry << endl;
-		Sleep(500);
-		
+				
 	}
 }

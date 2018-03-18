@@ -20,7 +20,5 @@ void func1(void) {
 	cout << "Enter INT: ";
 	cin >> i;
 	cout << &i;
-	cin.get();
-	cin.get();
-
+	
 }
