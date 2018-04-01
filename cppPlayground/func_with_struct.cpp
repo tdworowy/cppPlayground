@@ -4,13 +4,13 @@ struct test {
 	int y;
 };
 test sum1(test, test);
-test sum2(const test*, const test*);
+test* sum2(const test*, const test*);
 
 int main() {
 	test test1{1,2};
 	test test2{ 11,22 };
 	std::cout <<"X: "<< sum1(test1, test2).x << " Y: " << sum1(test1, test2).y << std::endl;
-	std::cout << "X: " << sum2(&test1, &test2).x << " Y: " << sum2(&test1, &test2).y << std::endl;
+	std::cout << "X: " << sum2(&test1, &test2)->x << " Y: " << sum2(&test1, &test2)->y << std::endl;
 }
 
 test sum1(test test1, test test2) {
@@ -23,10 +23,11 @@ test sum1(test test1, test test2) {
 
 }
 
-test sum2(const test* pt1, const test* pt2) {
+test* sum2(const test* pt1, const test* pt2) {
 	test res  {
 		pt1->x + pt2->x,
 		pt1->y + pt2->y
 	};
-	return res;
+	test * pt = &res;
+	return pt;
 }
