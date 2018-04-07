@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 
 long int multi(long int, long int);
 long int accumulate_multi(long int, long int, long int);
@@ -6,14 +7,19 @@ bool odd(long int);
 long int half(long int);
 
 int main() {
-	std::cout << multi(9, 9) << std::endl;
-	std::cout << multi(99, 99) << std::endl;
-	std::cout << multi(2, 2) << std::endl;
-	std::cout << multi(4, 4) << std::endl;
-	std::cout << multi(999, 999) << std::endl;
-	std::cout << multi(9999, 9999) << std::endl;
-	std::cout << multi(5, 9999) << std::endl;
-	std::cout << multi(9999,5 ) << std::endl;
+	
+	assert(multi(9, 9) == 81);
+	assert(multi(99, 99) == 9801);
+	assert(multi(2, 2) == 4);
+	assert(multi(4, 4) == 16);
+	assert(multi(999, 999) == 998001);
+	assert(multi(9999, 9999) == 99980001);
+	assert(multi(5, 9999) == 49995);
+	assert(multi(9999, 5) == 49995);
+	assert(multi(1, 5) == 5);
+	assert(multi(5, 1) == 5);
+	std::cout << "DONE" << std::endl;
+
 }
 
 long int accumulate_multi(long int result, long int number1, long int number2) {
