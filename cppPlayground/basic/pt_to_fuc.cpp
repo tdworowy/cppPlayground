@@ -9,6 +9,10 @@ int main() {
 
 	run(func1,1);
 	run(func2,2);
+	std::string(*pa[2])(int) = {func1,func2};
+	for (auto f : pa) {
+		run(f,3);
+	}
 }
 
 std::string func1(int number) {
