@@ -1,9 +1,8 @@
 #include <cassert>
 #include <iostream>
 long int GCM(long int segment1, long int segment2);
-long int rest(long int segment1, long int segment2);
-long int biggest_doubling(long int segment1, long int segment2);
 long int GCM_euklides(long int segment1, long int segment2);
+long int GCM_euklides2(long int segment1, long int segment2);
 
 int main() {
 	assert(GCM(196, 42) == 14);
@@ -52,18 +51,3 @@ long int GCM_euklides2(long int segment1, long int segment2) {
 	}
 
 
-long int biggest_doubling(long int segment1, long int segment2) {
-	while (segment1 - segment2 >= segment2) segment2 = segment2 + segment2;
-	return segment2;
-}
-long int rest(long int segment1, long int segment2) {
-	if (segment1 < segment2) return segment1;
-	long int segment3 = biggest_doubling(segment1, segment2);
-	segment1 = segment1 - segment3;
-	while (segment3 != segment2)
-	{
-		segment3 = segment3 / 2;
-		if (segment3 <= segment1) segment1 = segment1 - segment3;
-	}
-	return segment1;
-}
