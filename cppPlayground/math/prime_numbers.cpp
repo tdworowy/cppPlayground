@@ -1,5 +1,4 @@
 #include <iostream>
-//#include <algorithm>  
 
 template <typename I, typename  N>
 void mark_sieve(I first, I last, N factor);
