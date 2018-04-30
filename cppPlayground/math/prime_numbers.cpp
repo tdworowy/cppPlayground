@@ -1,29 +1,31 @@
 #include <iostream>
-#include <algorithm>  
-template<typename RandomAccessIterator>
-template<typename Integer>
+//#include <algorithm>  
 
-//template <RandomAccessIterator I, Integer N>
-//void mark_sieve(I first, I last, N factor);
+template <typename I, typename  N>
+void mark_sieve(I first, I last, N factor);
 
-template <RandomAccessIterator I, Integer N>
+template <typename  I, typename  N>
+void sieve(I first, N n);
+
+
+template <typename  I, typename  N>
 void mark_sieve(I first, I last, N factor) {
 	*first = false;
-	whle(last - first > factor) {
+	while(last - first > factor) {
 		first = first + factor;
 		*first = false;
 	}
 }
-template <RandomAccessIterator I, Integer N>
+template <typename  I, typename N>
 void sieve(I first, N n) {
-	I last = first + n
+	I last = first + n;
 	std::fill(first, last, true);
 	N i(0);
 	N index_sqr(3);
 	N factor(3);
 	while (index_sqr < n) {
-		if first[i]{
-			mark_sieve(first+ index_sqr,last,factor)
+		if (first[i]){
+			mark_sieve(first + index_sqr,last,factor);
 		}
 		++i;
 		//factor = i + i + 3;
@@ -36,5 +38,6 @@ void sieve(I first, N n) {
 
 
 int main() {
-	//TODO
+	int test[14] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14};
+	sieve(test, 1);
 }
