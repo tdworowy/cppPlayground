@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cassert>
-//DON'T WORK 
+
 #define NoncommutativeAdditiveSemigroup typename
 
-template <NoncommutativeAdditiveSemigroup A, int  N>
-A multi(N number1, N number2);
-template <NoncommutativeAdditiveSemigroup A, int  N>
-A accumulate_multi(A result, N number1, N number2);
+template <NoncommutativeAdditiveSemigroup A, int  N, typename operation>
+A operations(A number1, N number2, operation op);
+template <NoncommutativeAdditiveSemigroup A, int  N, typename operation>
+A accumulate_operation(A result, N number1, N number2, operation op);
 template <int  N>
 bool odd(N);
 template <int  N>
@@ -27,25 +27,25 @@ int main() {
 	std::cout << "DONE" << std::endl;
 
 }
-template <NoncommutativeAdditiveSemigroup A, int  N>
-A accumulate_multi(A result, N number1, N number2) {
+template <NoncommutativeAdditiveSemigroup A, int  N, typename operation>
+A accumulate_operation(A result, N number1, N number2, operation op) {
 	while (true) {
 		if (odd(number1)) {
-			result = result + number2;
+			result = op(result,number2;
 			if (number1 == 1) return result;
 		}
 		number1 = half(number1);
-		number2 = number2 + number2;
+		number2 = op(number2,number2;
 	}
 }
-template <NoncommutativeAdditiveSemigroup A, int  N>
-A multi(N number1, A number2) {
+template <NoncommutativeAdditiveSemigroup A, int  N, typename operation>
+A operations(A number1, N number2, operation op) {
 	while (!odd(number1)) {
-		number2 = number2 + number2;
+		number2 = op(number2 ,number2;
 		number1 = half(number1);
 	}
 	if (number1 == 1) return number2;
-	return accumulate_multi(number2, half(number1 - 1), number2 + number2);
+	return accumulate_multi(number2, half(number1 - 1), op(number2,number2), op);
 	}
 
 template <int N>
@@ -56,3 +56,8 @@ template <int N>
 N half(N number) {
 	return number >> 1;
 }
+
+template<typename T>
+T neutral_element_add(std::plus<T>) { return T(0); }
+template<typename T>
+T neutral_element_multi(std::multiplies<T>) { return T(0); }
