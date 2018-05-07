@@ -76,3 +76,9 @@ void Stock::show()const {
 	std::cout.precision(prec);
 	std::cout.setf(orig, std::ios_base::floatfield);
 }
+const Stock & Stock::topval(const Stock & s) const {
+	if (s.total_val > total_val)
+		return s;
+	else
+		return *this;
+}
