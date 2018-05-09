@@ -15,7 +15,7 @@ public:
 	bool isempty() const;
 	bool isfull() const;
 	bool add(const Item & item);
-	void visit(void(*pf)(int index)); //TODO
+	void visit(int index, void(*pf)(Item * item));
 
 };
 #endif 

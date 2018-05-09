@@ -1,12 +1,12 @@
 #include "list.h"
+#include <iostream>
 
 List::List() {
 	last = 0;
-	first = 0
-}
+	}
 
 bool List::isempty() const {
-	return Last == 0;
+	return last == 0;
 }
 
 bool List::isfull() const {
@@ -23,10 +23,11 @@ bool List::add(const Item & item) {
 		return false;
 	}
 }
-void List::visit(void(*pf)(int index)) {
-	if (index > max) {
-		std::cout << "Index out of range";
+void List::visit(int index, void(*pf)(Item * item))
+{
+	if (index > MAX) {
+		std::cout << "Index out of range"<<std::endl;
 	}
-	pf(irems[index]); //TODo
+	pf(&(items[index])); 
 	
 }
