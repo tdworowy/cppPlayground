@@ -7,7 +7,7 @@ class List
 {
 private:
 		enum {MAX=10};
-		Item items[MAX];
+		Item items[MAX] = {0};
 		int last;
 		
 public:

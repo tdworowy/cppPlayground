@@ -61,7 +61,7 @@ int main() {
 			std::cout << "INCORECT" << std::endl;
 			break;
 		}
-		std::cout << "Press A to add elelment, D to display, P to lift up to powerand K to end" << std::endl;
+		std::cout << "Press A to add elelment, D to display, P to lift up to power and K to end" << std::endl;
 
 	}
 }
