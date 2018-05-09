@@ -16,7 +16,7 @@ void Time::addMin(int m) {
 void Time::addHr(int h) {
 	hours += h;
 }
-void Time::sum(const Time &t) const {
+void Time::reset(int h,int m){
 	hours = h;
 	minuts = m;
 }
@@ -26,6 +26,9 @@ Time Time::sum(const Time & t) const {
 	sum.hours = hours + t.hours + sum.minuts / 60;
 	sum.minuts %= 60;
 	return sum;
+}
+Time Time::operator+(const Time & t) const {
+	return Time::sum(t);
 }
 void Time::show()const {
 	std::cout << hours << " hours, " << minuts << " minuts" << std::endl;
