@@ -1,9 +1,8 @@
 #include <iostream>
 #include <stdlib.h>
-const int max_X = 10;
-const int max_Y = 20;
+const int max_X = 40;
+const int max_Y = 40;
 
-using namespace std;
 void  board(char array[][max_Y]);
 void draw(char array[][max_Y]);
 bool check_if_positive(char);
@@ -14,7 +13,7 @@ bool check_if_max(char,char);
 bool check_if_positive(char number) {
 	bool res = true;
 	if (number < 0) {
-		cout << "Board Edge! ";
+		std::cout << "Board Edge! ";
 		res = false;
 	}
 	return res;
@@ -23,7 +22,7 @@ bool check_if_positive(char number) {
 bool check_if_max(char number, char max) {
 		bool res = true;
 		if (number >= max) {
-			cout << "Board Edge! ";
+			std::cout << "Board Edge! ";
 			res = false;
 		}
 		return res;
@@ -31,9 +30,9 @@ bool check_if_max(char number, char max) {
 
 void board(char array[max_X][max_Y]) {
 
-	for (int x = 0; x < 10; x++)
+	for (int x = 0; x < max_X; x++)
 	{
-		for (int y = 0; y < 20; y++)
+		for (int y = 0; y < max_Y; y++)
 		{
 			array[x][y] = 219;
 		}
@@ -43,14 +42,14 @@ void board(char array[max_X][max_Y]) {
 }
 void draw(char array[max_X][max_Y]) {
 	system("cls");
-	for (int x = 0; x < 10; x++)
+	for (int x = 0; x < max_X; x++)
 	{
-		for (int y = 0; y < 20; y++)
+		for (int y = 0; y < max_Y; y++)
 		{
-			cout << array[x][y];
+			std::cout << array[x][y];
 			
 		}
-		cout << endl;
+		std::cout << std::endl;
 	}
 
 }
@@ -66,14 +65,15 @@ int main()
 	a[5][5] = '@';
 	draw(a);
 
-	char wejscie;
+	char ch;
 	char temp;
 	while (true) {
-		cout << "X: " << X << " ";
-		cout << "Y: " << Y << endl;
-		cin >> wejscie;
-		if (wejscie == 'a')
-		{
+		std::cout << "X: " << X << " ";
+		std::cout << "Y: " << Y << std::endl;
+		std::cin >> ch;
+		switch (ch){
+		case 'A':
+		case 'a':
 			temp = Y - 1;
 			if (check_if_positive(temp)) {
 				a[X][temp] = '@';
@@ -81,11 +81,11 @@ int main()
 				draw(a);
 				Y = temp;
 			}
-			
+			break;
 		
-		}
-		if (wejscie == 'd')
-		{			
+		
+		case 'D':
+		case 'd':
 			temp = Y + 1;
 			if (check_if_max(temp,max_Y)) {
 				a[X][temp] = '@';
@@ -93,9 +93,9 @@ int main()
 				draw(a);
 				Y = temp;
 			}
-		}
-		if (wejscie == 'w')
-		{
+			break;
+		case 'W':
+		case 'w':
 			temp = X - 1;
 			if (check_if_positive(temp)) {
 				a[temp][Y] = '@';
@@ -103,16 +103,20 @@ int main()
 				draw(a);
 				X = temp;
 			}
-		}
-		if (wejscie == 's')
-		{
+			break;
+		case 'S':
+		case 's':
 			temp = X + 1;
-			if (check_if_max(temp,max_X)) {
+			if (check_if_max(temp, max_X)) {
 				a[temp][Y] = '@';
 				a[X][Y] = '#';
 				draw(a);
 				X = temp;
 			}
-		}
+			break;
+		default:
+			std::cout << "INCORECT" << std::endl;
+			break;
+			}
 	}
 }
