@@ -27,8 +27,21 @@ Time Time::sum(const Time & t) const {
 	sum.minuts %= 60;
 	return sum;
 }
+Time Time::subtraction(const Time & t) const {
+	Time subtraction;
+	int temp_minutes = minuts + (hours * 60);
+	int temo_t_minutes = t.minuts + (t.hours * 60);
+	subtraction.hours = (temp_minutes - temo_t_minutes) / 60;
+	subtraction.minuts = (temp_minutes - temo_t_minutes) % 60;
+	
+	return subtraction;
+}
+
 Time Time::operator+(const Time & t) const {
 	return Time::sum(t);
+}
+Time Time::operator-(const Time & t) const {
+	return Time::subtraction(t);
 }
 void Time::show()const {
 	std::cout << hours << " hours, " << minuts << " minuts" << std::endl;
