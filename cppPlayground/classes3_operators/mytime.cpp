@@ -1,4 +1,3 @@
-#include <iostream>
 #include "mytime.h"
 
 Time::Time() {
@@ -56,4 +55,8 @@ Time Time::operator*(double m) const {
 
 Time operator*(double m, const Time &t) {
 	return t * m;
+}
+std::ostream & operator<<(std::ostream & os, const Time & t) {
+	os << t.hours << " hours, " << t.minuts << " minuts";
+	return os;
 }
