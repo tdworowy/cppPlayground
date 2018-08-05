@@ -15,8 +15,10 @@ public:
 	Time subtraction(const Time & t) const;
 	Time operator+(const Time & t) const;
 	Time operator-(const Time & t) const;
+	Time operator*(double m) const;
 	void show() const;
 
+	friend Time operator*(double m, const Time &t);
 };
 
 #endif _
