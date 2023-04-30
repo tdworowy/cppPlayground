@@ -22,7 +22,6 @@ int main() {
 }
 
 int percentage(int invest, double percent) {
-
 	return invest * percent;
 
 }
