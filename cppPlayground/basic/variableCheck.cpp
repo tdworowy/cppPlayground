@@ -1,9 +1,7 @@
 #include <iostream>
 
-
-int main()
-{
-	using namespace std;
-	int x;
-	cout << x;
+int main() {
+  using namespace std;
+  int x;
+  cout << x;
 }

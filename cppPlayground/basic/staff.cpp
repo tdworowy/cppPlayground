@@ -1,5 +1,2 @@
 #include <iostream>
-int main() {
-
-	std::cout << (int *) "Test test tt";
-}
+int main() { std::cout << (int *)"Test test tt"; }

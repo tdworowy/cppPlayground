@@ -1,24 +1,21 @@
 #include <string>
 
-namespace pers
-{
-	struct Person
-	{
-		std::string fname;
-		std::string lname;
-	};
-	void getPerson(Person &);
-	void showPerson(const Person &);
-}
+namespace pers {
+struct Person {
+  std::string fname;
+  std::string lname;
+};
+void getPerson(Person &);
+void showPerson(const Person &);
+} // namespace pers
 
 namespace debts {
-	using namespace pers;
-	struct Debt
-	{
-		Person name;
-		double amount;
-	};
-	void getDebt(Debt &);
-	void showDebt(const Debt &);
-	double sumDebts(const Debt ar[], int en);
-}
+using namespace pers;
+struct Debt {
+  Person name;
+  double amount;
+};
+void getDebt(Debt &);
+void showDebt(const Debt &);
+double sumDebts(const Debt ar[], int en);
+} // namespace debts

@@ -1,18 +1,17 @@
 #include <iostream>
 
 int main() {
-	int line = 0;
-	char ch;
+  int line = 0;
+  char ch;
 
-	while (std::cin.get(ch) and ch !='Q') {
-		if (ch != "\n")
-			line++;;
-		
-	}
+  while (std::cin.get(ch) and ch != 'Q') {
+    if (ch != "\n")
+      line++;
+    ;
+  }
 }
 
-
-//int main() {
+// int main() {
 //	int line = 0;
 //	char ch;
 
